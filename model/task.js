@@ -1,6 +1,6 @@
 var Entity = require('./entity');
 
-Task = Entity.extend();
+var Task = Entity.extend();
 
 Task.prototype.sequence = "task:ids";
 Task.prototype.id_prefix = "task:";
@@ -9,7 +9,7 @@ Task.prototype.list_name = "tasks";
 // save task to db
 Task.prototype.persist = function(conns, fn) {
 	var task = this;
-	task.parent.persist(conns, function(err, task) {
+	task.parent.persist.call(task, conns, function(err, task) {
 		if (err) return fn(err);
 		// add task id to list 'user:id:tasks' on redis.
 		if (task.user) {

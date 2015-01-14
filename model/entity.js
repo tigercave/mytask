@@ -27,6 +27,7 @@ Entity.prototype.save = function(conns,fn) {
 
 Entity.prototype.persist = function(conns, fn) {
 	// create document key by increase one key on redis.
+	var entity = this;
 	conns.redis.incr(entity.sequence, function(err, id) { // increase sequense
 		if (err) return fn(err);
 

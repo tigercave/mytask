@@ -38,8 +38,8 @@ router.post('/', function(req, res) {
 	if (!data.title) return res.status(402).send('title is required');
 	if (!data.user) return res.status(402).send('user is required');
 
-	var task = new User(task);
-	
+	var task = new Task(data);
+	console.log(task);
 	// check user exists on system ?
 	User.getById(conns, data.user, function(err, user) {
 		if (err) return res.send(402).send('user does not exitst on system');
