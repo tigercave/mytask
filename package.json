@@ -1,0 +1,17 @@
+{
+  "name": "mytask",
+  "description": "Example NodeJs RESTFUll with Couchbase and Redis Database",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "express": "~4.10.6",
+    "body-parser": "~1.10.1",
+    "morgan": "~1.5.1",
+    "debug": "~2.1.1",
+    "couchbase": "~2.0.2",
+    "redis": "~0.12.1"
+  }
+}
